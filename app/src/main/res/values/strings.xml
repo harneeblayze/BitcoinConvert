@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">BitcoinConvert</string>
+
+    <string-array name="all_countries">
+        <item>Algeria(DZD)</item>
+        <item>Argentina(ARS)</item>
+        <item>Brazil(BRL)</item>
+        <item>Cameroon(XAF)</item>
+        <item>Canada (CAD)</item>
+        <item>China (CNY)</item>
+        <item>Costa Rica (CRC)</item>
+        <item>Europe (EUR)</item>
+        <item>India (INR)</item>
+        <item>Israel (ILS)</item>
+        <item>Ghana(GHC)</item>
+        <item>Japan (JPY)</item>
+        <item>Nigeria (NGN)</item>
+        <item>Peru (PEN)</item>
+        <item>New Zealand (NZD)</item>
+        <item>Great Britain (GBP)</item>
+        <item>USA (USD)</item>
+        <item>Qatar (QAR)</item>
+        <item>Panama (PAB)</item>
+        <item>HongKong (HKD)</item>
+        <item>Norway (NOK)</item>
+        <item>Egypt (EGP)</item>
+        <item>Saudi Arabia (SAR)</item>
+        <item>Zambia (ZMW)</item>
+
+    </string-array>
+</resources>
