@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
 import android.support.v7.widget.LinearLayoutManager;
@@ -82,6 +83,10 @@ public class MainActivity extends AppCompatActivity  {
             Long lastSavedTime = sharedPreferences.getLong(Constants.DATE_KEY,currentTime-diff );
             if(currentTime - lastSavedTime >= diff){
                 getCurrencies(BASE_URL+FIRST_QUERY);
+
+                if(sharedPreferences.getString(Constants.SHOWN_COUNTRY_LIST_KEY,"").length() < 3){
+                    Snackbar.make(addCardButton,"No currency card created yet",Snackbar.LENGTH_INDEFINITE).show();
+                }
             }
             else{
                 ArrayList<Currency> currencies = new ArrayList<>();
@@ -92,7 +97,10 @@ public class MainActivity extends AppCompatActivity  {
                 currencies.addAll(workOnResult(result2));
                 currencyAdapter.swapCurrencies(currencies);
                 progressDialog.cancel();
-                Toast.makeText(myContext,"Still Using previous data",Toast.LENGTH_LONG).show();
+                Toast.makeText(myContext,"Swipe left or right to remove card",Toast.LENGTH_LONG).show();
+                if(sharedPreferences.getString(Constants.SHOWN_COUNTRY_LIST_KEY,"").length() < 3){
+                    Snackbar.make(addCardButton,"No currency card created yet",Snackbar.LENGTH_INDEFINITE).show();
+                }
             }
         } catch (IOException | JSONException e) {
             e.printStackTrace();
